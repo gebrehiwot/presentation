@@ -1,64 +1,105 @@
+<!-- ============================= -->
+<!-- style.css (Enhanced, Gradient, Modern, Attractive) -->
+<!-- ============================= -->
 body {
-    margin: 0;
-    padding: 0;
-    font-family: "Arial", sans-serif;
-    background: linear-gradient(135deg, #4f46e5, #9333ea);
-    color: white;
-    text-align: center;
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background: linear-gradient(135deg, #e3eeff, #f6f7ff);
+  color: #222;
+}
+
+.site-header {
+  background: linear-gradient(135deg, #4f46e5, #6a4bff);
+  padding: 35px;
+  text-align: center;
+  color: white;
+  border-bottom: 5px solid #3f3bbd;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.site-header h1 {
+  margin: 0;
+  font-size: 34px;
 }
 
 .container {
-    max-width: 700px;
-    margin: 40px auto;
-    padding: 20px;
+  display: flex;
+  height: calc(100vh - 160px);
 }
 
-.slide-card {
-    padding: 30px;
-    background: rgba(255, 255, 255, 0.12);
-    border-radius: 16px;
-    backdrop-filter: blur(12px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-    transition: 0.4s ease;
-    min-height: 300px;
+.sidebar {
+  width: 300px;
+  background: #ffffff;
+  border-right: 1px solid #d7d7ea;
+  padding: 20px;
+  overflow-y: auto;
+  box-shadow: inset -3px 0 6px rgba(0,0,0,0.06);
 }
 
-.slide-card h1 {
-    font-size: 32px;
-    margin-bottom: 10px;
+.sidebar h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #4f46e5;
 }
 
-.slide-card h3 {
-    opacity: 0.8;
-    margin-bottom: 15px;
+.sidebar ul {
+  list-style: none;
+  padding: 0;
 }
 
-.slide-card p {
-    white-space: pre-line;
-    font-size: 18px;
-    line-height: 1.5;
+.sidebar li {
+  background: #eef0ff;
+  padding: 14px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.25s;
+  border-left: 4px solid transparent;
 }
 
-.controls {
-    margin-top: 25px;
+.sidebar li:hover {
+  background: #d8dbff;
+  border-left: 4px solid #4f46e5;
+  transform: translateX(6px);
 }
 
-.btn {
-    padding: 14px 30px;
-    background: #ffffff;
-    border: none;
-    border-radius: 30px;
-    color: #4f46e5;
-    font-size: 18px;
-    cursor: pointer;
-    transition: 0.2s;
+.content {
+  flex: 1;
+  background: white;
+  padding: 40px;
+  overflow-y: auto;
+  animation: fadeIn 0.6s ease;
+  border-left: 1px solid #ddd;
 }
 
-.btn:hover {
-    background: #ddd;
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.counter {
-    margin-top: 10px;
-    opacity: 0.8;
+.content h2 {
+  font-size: 30px;
+  color: #4f46e5;
+  margin-bottom: 10px;
+}
+
+.content pre {
+  background: #f4f5ff;
+  padding: 25px;
+  border-radius: 10px;
+  line-height: 1.7;
+  border-left: 6px solid #4f46e5;
+  white-space: pre-line;
+  font-size: 17px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.footer {
+  text-align: center;
+  padding: 15px;
+  background: #4f46e5;
+  color: white;
+  font-size: 14px;
+  margin-top: 10px;
 }
