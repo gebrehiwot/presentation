@@ -1,66 +1,147 @@
-const slides = [
-    {
-        title: "Putting It All Together",
-        subtitle: "Chapter 8: Testing, Security, and Global Deployment",
-        content: `An image representing a completed puzzle or an app launching like a rocket 🚀.`
-    },
-    {
-        title: "The Android Application Lifecycle",
-        subtitle: "Managing the Big Picture",
-        content: `Ensuring Activities, Services, and Broadcasts work together.\n\nField Service Model:\n• App starts → Checks Network → Pulls Data → Updates Room DB → Notifies User.\n• Success: Seamless transitions and consistent data.`
-    },
-    {
-        title: "Performance Auditing & Testing",
-        subtitle: "Technical Quality Assurance",
-        content: `Tools:\n• Android Profiler (CPU, Memory, Battery)\n• Lint Tool (find bugs)\n• Unit & UI Tests (ensure quality)`
-    },
-    {
-        title: "Security and Obfuscation",
-        subtitle: "Protecting User Data",
-        content: `• R8 / ProGuard → Shrink + Obfuscate code\n• Keystore → Digitally sign your app\n• Encrypted SharedPreferences → Protect tokens`
-    },
-    {
-        title: "Packaging for the World",
-        subtitle: "APK vs AAB",
-        content: `Android App Bundle (.aab) is the 2026 standard.\nWhy AAB?\n• Smaller downloads\n• Optimized per device`
-    },
-    {
-        title: "Global Deployment",
-        subtitle: "Google Play Console",
-        content: `• Manage translations\n• Staged rollouts (10%)\n• Crash & ANR monitoring\n• Store Listing Experiments`
-    },
-    {
-        title: "Future Trends",
-        subtitle: "Beyond 2026",
-        content: `• Foldable screens\n• Edge AI (on-device ML)\n• 5G/6G → Real-time, zero-latency`
-    },
-    {
-        title: "Conclusion",
-        subtitle: "Course Summary",
-        content: `From Architecture → Global Deployment.\nMobile development solves human problems.\nThank you!`
-    }
-];
 
-let index = 0;
+<!-- ============================= -->
+<!-- script.js (More Attractive, Interactive) -->
+<!-- ============================= -->
+const chapters = {
+  1: `
+# 📱 Chapter 1: Introduction to Mobile Computing
 
-function showSlide() {
-    const slide = slides[index];
-    document.getElementById("slide").innerHTML = `
-        <h1>${slide.title}</h1>
-        <h3>${slide.subtitle}</h3>
-        <p>${slide.content}</p>
-    `;
-    document.getElementById("counter").innerText = `Slide ${index + 1} of ${slides.length}`;
+Mobile development is unique because of:
+- 🌐 Mobility — devices constantly move & change networks
+- 🔋 Battery constraints — energy‑aware engineering
+- 🧠 Context Awareness — sensors, GPS, accelerometer
+
+## 🏛 Android Architecture Overview
+- **Linux Kernel:** hardware & power
+- **HAL:** hardware abstraction
+- **ART Runtime:** fast optimized execution
+- **Java/Kotlin APIs:** Your playground
+
+## 🛠 WAY OUT (Practical)
+✔ Modify app label in Manifest
+✔ Install Android Sources
+✔ Rebuild project successfully
+  `,
+
+  2: `
+# 🎨 Chapter 2: UI & Design Principles
+
+Design mobile UI using **Material Design 3 (2026 standard)**.
+
+## 🗂 Layouts
+- ConstraintLayout — ✨ powerful & flexible
+- LinearLayout
+- FrameLayout
+
+## 🎤 Multimodal Interaction (Modern Apps)
+- Text‑to‑speech
+- Voice commands
+- Gesture interactions
+
+## 🛠 WAY OUT
+Build a multilingual greeting app powered by TTS.
+  `,
+
+  3: `
+# 🔗 Chapter 3: Intents & Services
+
+## 🧭 Intents — Android communication system
+- Explicit Intents — navigate your screens
+- Implicit Intents — use device apps (Camera, Browser)
+
+## ⚙ Background Services
+- Started
+- Bound
+- Foreground (with notification)
+
+## 🛠 WAY OUT
+Create a 2‑screen navigation app using Explicit Intents.
+  `,
+
+  4: `
+# 💾 Chapter 4: Storage & Databases
+
+## Storage Types
+- SharedPreferences / DataStore
+- Room Database (modern SQLite)
+- File storage
+
+## 🔄 Syncing
+Use WorkManager for background syncing.
+
+## 🛠 WAY OUT
+Build a persistent Note‑Taking app.
+  `,
+
+  5: `
+# 🌐 Chapter 5: Networking
+
+## 🌍 Web APIs
+- REST + JSON
+- UI loading/success/error states
+
+## 🔔 Notifications
+- Notification channels
+- Alarms
+
+## 🛠 WAY OUT
+Build a Live API News Fetcher.
+  `,
+
+  6: `
+# 🎬 Chapter 6: Graphics & Multimedia
+
+## Graphics for Mobile Apps
+- Canvas API
+- Vector drawables
+
+## Media
+- ExoPlayer (2026 standard)
+- SoundPool effects
+
+## 🛠 WAY OUT
+Create a multimedia gallery.
+  `,
+
+  7: `
+# 📍 Chapter 7: Location & Maps
+
+## Location Basics
+- Fused Location Provider
+- Runtime permissions
+
+## Maps
+- Map markers
+- Custom camera zoom
+
+## 🛠 WAY OUT
+Build a Local Resource Finder Map App.
+  `,
+
+  8: `
+# 🚀 Chapter 8: Deployment
+
+## Packaging for Play Store
+- AAB (App Bundle)
+- App signing
+
+## Optimization
+- R8 shrinking + obfuscation
+- Memory profiling
+
+## 🛠 FINAL TASK
+Export signed release bundle.
+  `,
+};
+
+function loadChapter(num) {
+  const content = document.getElementById("content");
+  content.style.animation = "none";
+  void content.offsetWidth;
+  content.style.animation = "fadeIn 0.6s ease";
+
+  content.innerHTML = `
+    <h2>${chapters[num].split("\n")[1]}</h2>
+    <pre>${chapters[num]}</pre>
+  `;
 }
-
-function nextSlide() {
-    index = (index + 1) % slides.length;
-    showSlide();
-}
-
-function prevSlide() {
-    index = index === 0 ? slides.length - 1 : index - 1;
-    showSlide();
-}
-
-showSlide();
