@@ -1,23 +1,51 @@
+<!-- ============================= -->
+<!-- index.html (Enhanced, Modern, Attractive UI) -->
+<!-- ============================= -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Interactive Presentation</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mobile Development Interactive Course</title>
+  style.css
 </head>
 <body>
+  <header class="site-header">
+    <h1>📱 Mobile Development Mastercourse</h1>
+    <p>Interactive • Beautiful • Modern • Chapter‑by‑Chapter Learning</p>
+  </header>
 
-<div class="container">
-    <div id="slide" class="slide-card"></div>
+  <div class="container">
+    <aside class="sidebar">
+      <h3>📘 Course Chapters</h3>
+      <ul>
+        <li onclick="loadChapter(1)">1. Intro to Mobile Computing</li>
+        <li onclick="loadChapter(2)">2. UI & Design Principles</li>
+        <li onclick="loadChapter(3)">3. Intents & Services</li>
+        <li onclick="loadChapter(4)">4. Storage & Databases</li>
+        <li onclick="loadChapter(5)">5. Networking</li>
+        <li onclick="loadChapter(6)">6. Graphics & Multimedia</li>
+        <li onclick="loadChapter(7)">7. Location & Maps</li>
+        <li onclick="loadChapter(8)">8. Deployment & Play Store</li>
+      </ul>
+    </aside>
 
-    <div class="controls">
-        <button onclick="prevSlide()" class="btn">◀ Prev</button>
-        <button onclick="nextSlide()" class="btn">Next ▶</button>
-    </div>
+    <main class="content" id="content">
+      <h2>✨ Welcome to Your Mobile Development Portal</h2>
+      <p>Select a chapter to begin exploring beautifully formatted, enriched content.</p>
+      <p>This course includes:</p>
+      <ul>
+        <li>✔ Deep and visually rich explanations</li>
+        <li>✔ Interactive transitions & animations</li>
+        <li>✔ Practical project tasks (WAY OUT)</li>
+        <li>✔ Best practices and real‑world examples</li>
+        <li>✔ Clean and modern UI for easy reading</li>
+      </ul>
+    </main>
+  </div>
 
-    <p class="counter" id="counter"></p>
-</div>
+  <footer class="footer">Made with ❤️ for learners worldwide</footer>
 
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
